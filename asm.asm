@@ -190,7 +190,7 @@ printSampleBoard proc
     int 21h
     call endLine
     
-    ; H‡ng 1
+    ; H√†ng 1
     mov dl,'|'
     mov ah,2
     int 21h
@@ -225,7 +225,7 @@ printSampleBoard proc
     int 21h
     call endLine
     
-    ; H‡ng 2
+    ; H√†ng 2
     mov dl,'|'
     mov ah,2
     int 21h
@@ -260,7 +260,7 @@ printSampleBoard proc
     int 21h
     call endLine
     
-    ; H‡ng 3
+    ; H√†ng 3
     mov dl,'|'
     mov ah,2
     int 21h
@@ -409,12 +409,9 @@ printBoard proc
     
     rowLoop:
         push cx
-        
         mov dl,'|'
         mov ah,2
         int 21h
-        
-        push cx
         mov cx,3
         colLoop:
             call printSpaces3
@@ -430,9 +427,6 @@ printBoard proc
         pop cx
         
         call endLine
-        
-        pop cx
-        
         cmp cx,1
         je skipMidFrame
         lea dx,boardMidFrame
@@ -539,7 +533,7 @@ printSpaces3 endp
 checkWin proc
     push cx
     
-    ; Kiem tra h‡ng ngang
+    ; Kiem tra h√†ng ngang
     mov bl,arr[0]
     cmp bl,arr[1]
     jne check2
@@ -566,7 +560,7 @@ checkWin proc
     call printWin
     jmp endCheckWin
     
-    ; Kiem tra h‡ng doc
+    ; Kiem tra h√†ng doc
     check4:
     mov bl,arr[0]
     cmp bl,arr[3]
